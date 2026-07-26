@@ -1,6 +1,4 @@
 # aavantage
-Stata commad to import Alpha Vantage stock market, indexes, cryptocurrency, and commodity data.
-# aavantage
 
 `aavantage` is a Stata command that imports financial and economic data from the [Alpha Vantage](https://www.alphavantage.co/) API.
 
