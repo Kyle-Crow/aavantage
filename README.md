@@ -234,23 +234,37 @@ DOGE: Dogecoin
 Unlike stocks, `aavantage` can download data for **multiple cryptocurrencies in a single command**. In this example, daily price data are downloaded for both **ALCX** and **Bitcoin (BTC)** using the **euro (`EUR`) market**, so prices are returned in euros rather than U.S. dollars. After importing the data, `describe` shows the variables created by `aavantage`.
 
 ```stata
-. aavantage crypto ALCX BTC, market(EUR) clear
+. aavantage list market
+USD: US Dollar
+BTC: Bitcoin
+EUR: Euro
+GBP: British Pound Sterling
+USDT: Tether
+ETH: Ethereum
+USDC: USD Coin
+DAI: Dai
+
+. aavantage crypto ALCX BTC, clear market(EUR)
 (7 vars, 700 obs)
 
-. describe
+. des
 
 Contains data
- Observations:           700
-    Variables:             7
+ Observations:           700                  
+    Variables:             7                
+-------------------------------------------------------------
+Variable      Storage   Display    Value
+    name         type    format    label      Variable label
+-------------------------------------------------------------
+date            int     %td                   
+ticker          str4    %9s                   
+open            double  %10.0g                
+high            double  %10.0g                
+low             double  %10.0g                
+close           double  %10.0g                
+volume          double  %10.0g                
+--------------------------------------------------------------
+Sorted by: 
+     Note: Dataset has changed since last saved.
 
-Variable      Storage   Display
-name             type    format
----------------------------------------------
-date             int     %td
-ticker           str4    %9s
-open             double  %10.0g
-high             double  %10.0g
-low              double  %10.0g
-close            double  %10.0g
-volume           double  %10.0g
-```
+
