@@ -191,7 +191,7 @@ The `search` command searches Alpha Vantage for ticker symbols matching a compan
 
 Symbol:     SMSN.LON
 Name:       Samsung Electronics Co. Ltd
-&lt;output omitted&gt;
+`<output omitted>`
 
 . aavantage stock SMSN.LON, weekly clear
 (7 vars, 1131 obs)
@@ -207,7 +207,7 @@ To list all of the available currencies you can import, type:
 00: 00 Token
 1INCH: 1inch
 A8: Ancient8
-&lt;output omitted&gt;
+`<output omitted>`
 ```
 ---
 
