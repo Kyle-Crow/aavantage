@@ -62,6 +62,7 @@ personal/
 ├── aavantage.ado
 ├── aavantage.sthlp
 ├── StAlpha.jar
+├── StAlphaCombined.jar
 ```
 
 3. Restart Stata.
@@ -148,11 +149,11 @@ aavantage list commodity
 ```
 # Examples
 
-The following examples demonstrate some of the most common uses of `aavantage`, including downloading stock and cryptocurrency data, searching for ticker symbols, and browsing the financial instruments supported by Alpha Vantage.
+The following examples demonstrate some of the most common uses of `aavantage`, including downloading stock and cryptocurrency data, searching for ticker symbols, and listing supported markets and cryptocurrencies by Alpha Vantage.
 
 ## Import U.S. Stock Data
 
-This example downloads the complete daily price history for Ford Motor Company (`F`). The `full` option requests the complete historical dataset available from Alpha Vantage. After the data are imported, the `describe` command displays the variables created by `aavantage`.
+This example downloads the complete daily price history for Ford Motor Company (`F`). After the data are imported, the `describe` command displays the variables created by `aavantage`.
 
 ```stata
 . aavantage stock F, full clear
@@ -216,7 +217,7 @@ DAI: Dai
 
 ## Browse Supported Cryptocurrencies
 
-The `list crypto` command displays all cryptocurrency symbols currently supported by Alpha Vantage, making it easy to identify valid cryptocurrency symbols before requesting data.
+The `aavantage list crypto` command displays all cryptocurrency symbols currently supported by Alpha Vantage, making it easy to identify valid cryptocurrency symbols before requesting data.
 
 ```stata
 . aavantage list crypto
@@ -231,7 +232,7 @@ DOGE: Dogecoin
 
 ## Import Cryptocurrency Data
 
-Unlike stocks, `aavantage` can download data for **multiple cryptocurrencies in a single command**. In this example, daily price data are downloaded for both **ALCX** and **Bitcoin (BTC)** using the **euro (`EUR`) market**, so prices are returned in euros rather than U.S. dollars. After importing the data, `describe` shows the variables created by `aavantage`.
+In this example, daily price data are downloaded for both **ALCX** and **Bitcoin (BTC)** using the **euro (`EUR`) market**, so prices are returned in euros rather than U.S. dollars.
 
 ```stata
 . aavantage list market
