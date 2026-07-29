@@ -153,10 +153,10 @@ The following examples demonstrate some of the most common uses of `aavantage`, 
 
 ## Import Stock Data
 
-This example downloads the complete daily price history for Ford Motor Company (`F`) and Shopify Inc. ('SHOP.TRT').
+This example downloads the complete daily price history for Ford Motor Company (`F`) and Shopify Inc (`SHOP.TRT`).
 . aavantage stock F SHOP.TRT, clear full
 (7 vars, 9532 obs)
-
+```stata
 . des
 
 Contains data
