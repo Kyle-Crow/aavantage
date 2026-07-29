@@ -152,50 +152,105 @@ The following examples demonstrate some of the most common uses of `aavantage`, 
 
 ## Import U.S. Stock Data
 
-This example downloads the complete daily price history for Ford Motor Company (`F`). The `full` option requests the complete historical dataset available from Alpha Vantage.
+This example downloads the complete daily price history for Ford Motor Company (`F`). The `full` option requests the complete historical dataset available from Alpha Vantage. After the data are imported, the `describe` command displays the variables created by `aavantage`.
 
 ```stata
-aavantage stock F, full clear
+. aavantage stock F, full clear
+(7 vars, 6724 obs)
+
+. describe
+
+Contains data
+ Observations:         6,724
+    Variables:             7
+
+Variable      Storage   Display
+name             type    format
+---------------------------------------------
+date             int     %td
+ticker           str1    %9s
+open             double  %10.0g
+high             double  %10.0g
+low              double  %10.0g
+close            double  %10.0g
+volume           long    %10.0g
 ```
 
 ---
 
 ## Search for and Import an Internationally Listed Stock
 
-The `search` command searches Alpha Vantage for ticker symbols matching a company name. In this example, searching for *Samsung* returns several listings across different exchanges. The weekly stock data are then downloaded using the London Stock Exchange ticker (`SMSN.LON`), demonstrating that `aavantage` supports both U.S. and internationally listed stocks.
+The `search` command searches Alpha Vantage for ticker symbols matching a company name. In this example, searching for *Samsung* returns several listings across different stock exchanges. The weekly stock data are then downloaded using the London Stock Exchange ticker (`SMSN.LON`), demonstrating that `aavantage` supports both U.S. and internationally listed stocks.
 
 ```stata
-aavantage search Samsung
+. aavantage search Samsung
 
-aavantage stock SMSN.LON, weekly clear
-```
+Symbol:     SMSN.LON
+Name:       Samsung Electronics Co. Ltd
+...
 
----
-
-## Browse Supported Cryptocurrencies
-
-The `list crypto` command displays all cryptocurrency symbols currently supported by Alpha Vantage.
-
-```stata
-aavantage list crypto
+. aavantage stock SMSN.LON, weekly clear
+(7 vars, 1131 obs)
 ```
 
 ---
 
 ## Browse Supported Cryptocurrency Markets
 
-Cryptocurrency prices can be quoted in different markets (quote currencies). The `list market` command displays all supported markets that may be used when requesting cryptocurrency data.
+Cryptocurrency prices can be quoted in different currencies, such as U.S. dollars (`USD`), euros (`EUR`), or Bitcoin (`BTC`). The `list market` command displays all supported quote currencies that may be used when requesting cryptocurrency data.
 
 ```stata
-aavantage list market
+. aavantage list market
+
+USD: US Dollar
+BTC: Bitcoin
+EUR: Euro
+GBP: British Pound Sterling
+USDT: Tether
+ETH: Ethereum
+USDC: USD Coin
+DAI: Dai
 ```
 
 ---
 
-## Import Cryptocurrency Intraday Data
+## Browse Supported Cryptocurrencies
 
-This example downloads 5-minute intraday price data for the ALCX cryptocurrency using the euro (`EUR`) market. In this example, prices are returned in euros rather than U.S. dollars.
+The `list crypto` command displays all cryptocurrency symbols currently supported by Alpha Vantage, making it easy to identify valid cryptocurrency symbols before requesting data.
 
 ```stata
-aavantage crypto ALCX EUR, intraday(5) clear
+. aavantage list crypto
+
+BTC: Bitcoin
+ETH: Ethereum
+DOGE: Dogecoin
+...
+```
+
+---
+
+## Import Cryptocurrency Data
+
+Unlike stocks, `aavantage` can download data for **multiple cryptocurrencies in a single command**. In this example, daily price data are downloaded for both **ALCX** and **Bitcoin (BTC)** using the **euro (`EUR`) market**, so prices are returned in euros rather than U.S. dollars. After importing the data, `describe` shows the variables created by `aavantage`.
+
+```stata
+. aavantage crypto ALCX BTC, market(EUR) clear
+(7 vars, 700 obs)
+
+. describe
+
+Contains data
+ Observations:           700
+    Variables:             7
+
+Variable      Storage   Display
+name             type    format
+---------------------------------------------
+date             int     %td
+ticker           str4    %9s
+open             double  %10.0g
+high             double  %10.0g
+low              double  %10.0g
+close            double  %10.0g
+volume           double  %10.0g
 ```
