@@ -207,7 +207,7 @@ To list all of the available currencies you can import, type:
 00: 00 Token
 1INCH: 1inch
 A8: Ancient8
-\<output_omitted\>;
+\<output_omitted\>
 ```
 ---
 
