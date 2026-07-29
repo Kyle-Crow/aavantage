@@ -191,32 +191,25 @@ The `search` command searches Alpha Vantage for ticker symbols matching a compan
 
 Symbol:     SMSN.LON
 Name:       Samsung Electronics Co. Ltd
-...
+<out omitted>
 
 . aavantage stock SMSN.LON, weekly clear
 (7 vars, 1131 obs)
 ```
 
----
 
-## Import Cryptocurrency
+## List Cryptocurrency
 
-Cryptocurrency prices can be quoted in different currencies, such as U.S. dollars (`USD`), euros (`EUR`), or Bitcoin (`BTC`). The `list market` command displays all supported quote currencies that may be used when requesting cryptocurrency data.
+To list all of the available currencies you can import, type: 
 
 ```stata
-. aavantage list market
-
-USD: US Dollar
-BTC: Bitcoin
-EUR: Euro
-GBP: British Pound Sterling
-USDT: Tether
-ETH: Ethereum
-USDC: USD Coin
-DAI: Dai
+. aavantage list crypto
+00: 00 Token
+1INCH: 1inch
+A8: Ancient8
+<out omitted>
 ```
 
----
 
 ## Import Cryptocurrency Data
 
@@ -255,5 +248,5 @@ volume          double  %10.0g
 --------------------------------------------------------------
 Sorted by: 
      Note: Dataset has changed since last saved.
-
+```
 
