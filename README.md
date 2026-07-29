@@ -151,10 +151,9 @@ aavantage list commodity
 
 The following examples demonstrate some of the most common uses of `aavantage`, including downloading stock and cryptocurrency data, searching for ticker symbols, and listing supported markets and cryptocurrencies by Alpha Vantage.
 
-## Import U.S. Stock Data
+## Import Stock Data
 
-This example downloads the complete daily price history for Ford Motor Company (`F`). After the data are imported, the `describe` command displays the variables created by `aavantage`.
-
+This example downloads the complete daily price history for Ford Motor Company (`F`).
 ```stata
 . aavantage stock F, full clear
 (7 vars, 6724 obs)
@@ -181,7 +180,7 @@ volume           long    %10.0g
 
 ## Search for and Import an Internationally Listed Stock
 
-The `search` command searches Alpha Vantage for ticker symbols matching a company name. In this example, searching for *Samsung* returns several listings across different stock exchanges. The weekly stock data are then downloaded using the London Stock Exchange ticker (`SMSN.LON`), demonstrating that `aavantage` supports both U.S. and internationally listed stocks.
+The `search` command searches Alpha Vantage for ticker symbols matching a company name. In this example, searching for *Samsung* returns several listings across different stock exchanges. The weekly stock data are then downloaded using the London Stock Exchange ticker (`SMSN.LON`), demonstrating that `aavantage` supports both U.S.- and international-listed stocks.
 
 ```stata
 . aavantage search Samsung
@@ -196,7 +195,7 @@ Name:       Samsung Electronics Co. Ltd
 
 ---
 
-## Browse Supported Cryptocurrency Markets
+## Import Cryptocurrency
 
 Cryptocurrency prices can be quoted in different currencies, such as U.S. dollars (`USD`), euros (`EUR`), or Bitcoin (`BTC`). The `list market` command displays all supported quote currencies that may be used when requesting cryptocurrency data.
 
@@ -215,7 +214,7 @@ DAI: Dai
 
 ---
 
-## Browse Supported Cryptocurrencies
+## List Cryptocurrencies
 
 The `aavantage list crypto` command displays all cryptocurrency symbols currently supported by Alpha Vantage, making it easy to identify valid cryptocurrency symbols before requesting data.
 
