@@ -61,7 +61,7 @@ Your personal directory should contain the package files:
 personal/
 ├── aavantage.ado
 ├── aavantage.sthlp
-├── StAlpha.jar
+├── aavantage.dlg
 ├── StAlphaCombined.jar
 ```
 
