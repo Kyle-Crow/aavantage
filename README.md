@@ -146,3 +146,56 @@ aavantage list market
 aavantage list crypto
 aavantage list commodity
 ```
+# Examples
+
+The following examples demonstrate some of the most common uses of `aavantage`, including downloading stock and cryptocurrency data, searching for ticker symbols, and browsing the financial instruments supported by Alpha Vantage.
+
+## Import U.S. Stock Data
+
+This example downloads the complete daily price history for Ford Motor Company (`F`). The `full` option requests the complete historical dataset available from Alpha Vantage.
+
+```stata
+aavantage stock F, full clear
+```
+
+---
+
+## Search for and Import an Internationally Listed Stock
+
+The `search` command searches Alpha Vantage for ticker symbols matching a company name. In this example, searching for *Samsung* returns several listings across different exchanges. The weekly stock data are then downloaded using the London Stock Exchange ticker (`SMSN.LON`), demonstrating that `aavantage` supports both U.S. and internationally listed stocks.
+
+```stata
+aavantage search Samsung
+
+aavantage stock SMSN.LON, weekly clear
+```
+
+---
+
+## Browse Supported Cryptocurrencies
+
+The `list crypto` command displays all cryptocurrency symbols currently supported by Alpha Vantage.
+
+```stata
+aavantage list crypto
+```
+
+---
+
+## Browse Supported Cryptocurrency Markets
+
+Cryptocurrency prices can be quoted in different markets (quote currencies). The `list market` command displays all supported markets that may be used when requesting cryptocurrency data.
+
+```stata
+aavantage list market
+```
+
+---
+
+## Import Cryptocurrency Intraday Data
+
+This example downloads 5-minute intraday price data for the ALCX cryptocurrency using the euro (`EUR`) market. In this example, prices are returned in euros rather than U.S. dollars.
+
+```stata
+aavantage crypto ALCX EUR, intraday(5) clear
+```
