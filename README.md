@@ -1,6 +1,6 @@
 # aavantage
 
-`aavantage` is a Stata command that imports financial and economic data directly from the Alpha Vantage API.
+`aavantage` is a Stata 19 command that imports financial and economic data directly from the Alpha Vantage API.
 
 The command supports:
 
