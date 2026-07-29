@@ -214,21 +214,6 @@ DAI: Dai
 
 ---
 
-## List Cryptocurrencies
-
-The `aavantage list crypto` command displays all cryptocurrency symbols currently supported by Alpha Vantage, making it easy to identify valid cryptocurrency symbols before requesting data.
-
-```stata
-. aavantage list crypto
-
-BTC: Bitcoin
-ETH: Ethereum
-DOGE: Dogecoin
-...
-```
-
----
-
 ## Import Cryptocurrency Data
 
 In this example, daily price data are downloaded for both **ALCX** and **Bitcoin (BTC)** using the **euro (`EUR`) market**, so prices are returned in euros rather than U.S. dollars.
