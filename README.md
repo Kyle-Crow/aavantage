@@ -155,27 +155,30 @@ The following examples demonstrate some of the most common uses of `aavantage`, 
 
 This example downloads the complete daily price history for Ford Motor Company (`F`).
 ```stata
-. aavantage stock F, full clear
-(7 vars, 6724 obs)
+. aavantage stock F SHOP.TRT, clear full
+(7 vars, 9532 obs)
 
-. describe
+. des
 
 Contains data
- Observations:         6,724
-    Variables:             7
+ Observations:         9,532                  
+    Variables:             7                  
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Variable      Storage   Display    Value
+    name         type    format    label      Variable label
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+date            int     %td                   
+ticker          str8    %9s                   
+open            double  %10.0g                
+high            double  %10.0g                
+low             double  %10.0g                
+close           double  %10.0g                
+volume          long    %10.0g                
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Sorted by: 
+     Note: Dataset has changed since last saved.
 
-Variable      Storage   Display
-name             type    format
----------------------------------------------
-date             int     %td
-ticker           str1    %9s
-open             double  %10.0g
-high             double  %10.0g
-low              double  %10.0g
-close            double  %10.0g
-volume           long    %10.0g
 ```
-
 ---
 
 ## Search for and Import an Internationally Listed Stock
