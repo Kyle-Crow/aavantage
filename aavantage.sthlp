@@ -208,8 +208,9 @@ Options are presented under the following headings:
 the interval in minutes.{p_end}
 
 {pstd}
-{opt full} requests the full available Alpha Vantage dataset rather
-than the default compact data. This option only works with option {opt intraday()}
+{opt full} requests the full available Alpha Vantage dataset rather than the default compact dataset.
+For the {cmd:stock} subcommand, this option is supported with the {cmd:daily}, {cmd:daily adjusted}, and {opt:intraday()} time series.
+For the {cmd:crypto} subcommand, it is supported only with {opt:intraday()}.
 {p_end}
 
 {pstd}
@@ -445,10 +446,10 @@ Import adjusted weekly stock data
 {cmd:. aavantage stock IBM, weekly adjusted clear}
 
 {phang}
-Import monthly stock data using the full output size
+Import daily stock data using the full output size
 
 {phang2}
-{cmd:. aavantage stock F, monthly full clear}
+{cmd:. aavantage stock F, full clear}
 
 {phang}
 Import daily stock data from the Toronto Stock Exchange
